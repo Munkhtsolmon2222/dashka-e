@@ -355,6 +355,9 @@
       </div>
     </div>
     <!-- Your clickable image -->
+     <div style="position: relative;">
+<img id="dashkaImage" src="dashka.jpg" style="height: 125.5px; width: 85px; border-radius: 10px; z-index: 100; position: absolute; top: 50px; left: 22px;">
+     </div>
     <div style="
            display: flex;
            justify-content: center;
@@ -374,6 +377,8 @@
           <button style="margin-bottom: 45px;" class="close-btn" onclick="closeModal()"><i
               class="fa-solid fa-x"></i></button>
         </div>
+        <!-- New image that appears in modal -->
+        <img id="modalDashkaImage" src="dashka.jpg" style="height: 125.5px; width: 85px; border-radius: 10px; position: absolute; top: 210px; left: 45px; z-index: 200; display: none;">
         <img src="finished.jpg" alt="Full Image" style="width:350px; height: 220px;" />
         <div style="position: relative; width: 350px; height: 220px;">
           <!-- Суурь зураг (relative) -->
@@ -641,11 +646,15 @@
           function openModal() {
             document.getElementById("modal").classList.add("show");
             document.querySelector(".main").style.display = "none";
+            document.getElementById("dashkaImage").style.display = "none";
+            document.getElementById("modalDashkaImage").style.display = "block";
           }
 
           function closeModal() {
             document.getElementById("modal").classList.remove("show");
             document.querySelector(".main").style.display = "block";
+            document.getElementById("dashkaImage").style.display = "block";
+            document.getElementById("modalDashkaImage").style.display = "none";
           }
 
           function openSheet() {
